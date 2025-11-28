@@ -1,0 +1,17 @@
+name: SalmSource
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.1.0
+  - r-tidymodels
+  - r-tidyverse
+  - r-lightgbm
+  - r-bonsai
+  - r-seqinr
+  - r-ranger
+  - blast
+  - diamond
+  - snippy
+  - prodigal
