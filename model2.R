@@ -1,4 +1,3 @@
-# Model 2 Application Script
 library(tidymodels)
 library(tidyverse)
 library(lightgbm)
@@ -44,16 +43,13 @@ high_quality_hits <- blast_results %>%
   filter(pident == max(pident)) %>%
   ungroup()
   
-# 关键修正：直接使用blast结果中的sseqid构建特征名
 detected_genes <- unique(high_quality_hits$sseqid)
 detected_gene_features <- paste0("gene_", detected_genes)
 
-# 初始化基因特征向量
 gene_features <- feature_best[grepl("^gene_", feature_best)]
 gene_vector <- rep(0, length(gene_features))
 names(gene_vector) <- gene_features
 
-# 标记检测到的基因 - 直接匹配
 matched_genes <- intersect(names(gene_vector), detected_gene_features)
 gene_vector[matched_genes] <- 1
   
@@ -124,5 +120,6 @@ feature_report <- data.frame(
   )
 )
 write_tsv(feature_report, sprintf("%s_detected_features.txt", output_name))
+
 
 cat("Analysis completed! Prediction results saved in", sprintf("%s_host_prediction.txt", output_name), "\n")
