@@ -1,7 +1,7 @@
 # STMSource: Salmonella Typhimurium Host Origin Prediction
 
 ## Overview
-STMSource is a bioinformatics tool for predicting the host origin (Chicken vs Pig) of *Salmonella* Typhimurium strains from genomic sequences. The tool implements a two-stage prediction pipeline.
+STMSource is a bioinformatics tool for predicting the host origin (Chicken vs Pig) of *Salmonella* Typhimurium strains from genomic sequences. The tool implements a two-stage prediction pipeline. The first stage aims to distinguish isolates from chickens or swine from isolates of all other origins. The second stage then specifically discriminates between chicken and swine origins for isolates predicted to originate from one of these two hosts.
 
 ## Dependencies
 All dependencies are managed through Conda:
